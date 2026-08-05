@@ -47,3 +47,15 @@ texture = ExtResource("2_epypp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Wall" unique_id=880340975]
 position = Vector2(-113, -75.25)
 shape = SubResource("RectangleShape2D_d3xmx")
+
+[node name="Wall2" type="StaticBody2D" parent="Wall" unique_id=1903525005]
+position = Vector2(229, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall/Wall2" unique_id=319373059]
+position = Vector2(-114, -78)
+scale = Vector2(0.3, 3.125)
+texture = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Wall2" unique_id=969156151]
+position = Vector2(-113, -75.25)
+shape = SubResource("RectangleShape2D_d3xmx")
