@@ -1,18 +1,14 @@
 extends CharacterBody2D
 
-var speed = 200
+var speed = 100
+var can_move = false
 
 func _physics_process(delta):
-	var direction = Vector2.ZERO
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 
-	if Input.is_key_pressed(KEY_RIGHT):
-		direction.x = 1
-	elif Input.is_key_pressed(KEY_LEFT):
-		direction.x = -1
-	elif Input.is_key_pressed(KEY_DOWN):
-		direction.y = 1
-	elif Input.is_key_pressed(KEY_UP):
-		direction.y = -1
-
-	velocity = direction * speed
+	velocity.x = speed
+	velocity.y = 0
 	move_and_slide()

@@ -6,9 +6,10 @@
 [node name="Node2D" type="Node2D" unique_id=1068908408]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1495415365]
-position = Vector2(554, 342)
+position = Vector2(587, 327)
 texture = ExtResource("1_gc03m")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=878793516]
-position = Vector2(-536, 146)
+position = Vector2(-77.999985, 74.000015)
+scale = Vector2(0.89362854, 0.8873417)
 texture = ExtResource("2_nccsi")

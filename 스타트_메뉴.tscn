@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://vfr6bthicbr0"]
+
+[ext_resource type="Script" uid="uid://cerwbjat6i5f5" path="res://스타트_메뉴.gd" id="1_7bglh"]
+[ext_resource type="Script" uid="uid://bkdghvag8v06c" path="res://배경사진.gd" id="1_v0nex"]
+[ext_resource type="FontFile" uid="uid://8lpgj74ev2t1" path="res://opening_frames/Lacquer-Regular.ttf" id="2_el8gy"]
+[ext_resource type="FontFile" uid="uid://b0jk45s8q8fp1" path="res://opening_frames/PlayfairDisplay-VariableFont_wght.ttf" id="3_4ht14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bglh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ht14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlufh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guemm"]
+
+[node name="스타트 메뉴" type="Control" unique_id=1548401967]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bglh")
+
+[node name="배경 사진" type="TextureRect" parent="." unique_id=179615892]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+expand_mode = 1
+script = ExtResource("1_v0nex")
+
+[node name="게임 시작 글" type="Label" parent="." unique_id=384913349]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 384.0
+offset_right = 600.0
+offset_bottom = 502.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.8047426, 0.80474263, 0.8047426, 1)
+theme_override_colors/font_outline_color = Color(0.22745098, 0.07058824, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_4ht14")
+theme_override_font_sizes/font_size = 60
+text = "START"
+
+[node name="제목" type="Label" parent="." unique_id=1065165556]
+layout_mode = 0
+offset_left = 565.0
+offset_top = 798.0
+offset_right = 1565.0
+offset_bottom = 974.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.15807036, 0.0010616027, 0.0010571739, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_el8gy")
+theme_override_font_sizes/font_size = 121
+text = "THE BACKROOMS"
+
+[node name="스타트 버튼" type="Button" parent="." unique_id=613951183]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 395.0
+offset_right = 476.0
+offset_bottom = 458.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7bglh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4ht14")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wlufh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_guemm")
+
+[connection signal="pressed" from="스타트 버튼" to="." method="_on_스타트_버튼_pressed"]

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://w0ivo3oqkr4k"]
+
+[ext_resource type="Script" uid="uid://drghkhsd2cgge" path="res://길거리_씬.gd" id="1_xx6jm"]
+[ext_resource type="Texture2D" uid="uid://bxdk1851dgs06" path="res://집.png" id="2_lvfwf"]
+[ext_resource type="Script" uid="uid://b0dbcp3048c5w" path="res://player.gd" id="3_kf575"]
+[ext_resource type="Texture2D" uid="uid://cfr2du6t57es0" path="res://icon.svg" id="4_ktqu8"]
+[ext_resource type="Texture2D" uid="uid://dyb0t3d3c0pl" path="res://a83cc60d-2ccf-442a-b325-4cf15f99dc09.png" id="5_n5iof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdr26"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qdr26"]
+radius = 39.051247
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx6jm"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+
+[node name="길거리 씬" type="Node2D" unique_id=950499632]
+script = ExtResource("1_xx6jm")
+
+[node name="Road" type="TextureRect" parent="." unique_id=209434263]
+offset_left = -80.0
+offset_top = -1277.0
+offset_right = 3473.0
+offset_bottom = 1205.0
+texture = ExtResource("2_lvfwf")
+expand_mode = 1
+
+[node name="IntroCamera" type="Camera2D" parent="." unique_id=1171871233]
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=264328192]
+z_index = 1
+position = Vector2(944, 652)
+script = ExtResource("3_kf575")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1371336879]
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("4_ktqu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1133742072]
+shape = SubResource("RectangleShape2D_qdr26")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1313632656]
+
+[node name="맨홀" type="Area2D" parent="." unique_id=972531196]
+position = Vector2(2444, 672)
+
+[node name="Sprite2D" type="Sprite2D" parent="맨홀" unique_id=330291327]
+modulate = Color(0.18359056, 0.18359041, 0.18359047, 1)
+scale = Vector2(0.13072394, 0.091414146)
+texture = ExtResource("5_n5iof")
+
+[node name="구멍" type="Sprite2D" parent="맨홀" unique_id=1499129582]
+visible = false
+modulate = Color(0.033853278, 0.033853278, 0.033853274, 1)
+scale = Vector2(0.13072394, 0.091414146)
+texture = ExtResource("5_n5iof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="맨홀" unique_id=866345693]
+position = Vector2(-7, -3)
+shape = SubResource("CircleShape2D_qdr26")
+
+[node name="대화창" type="CanvasLayer" parent="." unique_id=1565866578]
+
+[node name="FadeBlack" type="ColorRect" parent="대화창" unique_id=2113632072]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="대화창" unique_id=1550512885]
+offset_left = 80.0
+offset_top = 760.0
+offset_right = 1840.0
+offset_bottom = 1000.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xx6jm")
+
+[node name="대사" type="Label" parent="대화창/Panel" unique_id=1551224845]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 35.0
+offset_right = 1736.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 34
+text = "와... 벌써 12시네."
+
+[node name="다음 대사" type="Label" parent="대화창/Panel" unique_id=2031949049]
+layout_mode = 0
+offset_left = 1620.0
+offset_top = 190.0
+offset_right = 1770.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0.64820284, 0.65137446, 0.6466481, 1)
+theme_override_font_sizes/font_size = 26
+text = "- SPACE -"
