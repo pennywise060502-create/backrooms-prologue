@@ -206,9 +206,7 @@ func start_manhole_event():
 	await fade_tween.finished
 
 	print("다음 씬으로 이동")
-
-	# Backrooms 씬 만들면 위 print 지우고 이걸 켜면 됨
-	# get_tree().change_scene_to_file("res://backrooms.tscn")
+	get_tree().change_scene_to_file("res://백룸씬.tscn")
 
 
 func shake_camera():
